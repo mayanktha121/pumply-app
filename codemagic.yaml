@@ -1,0 +1,15 @@
+workflows:
+  android-apk-local:
+    name: Android APK (Local Mode, auto-create android/ios)
+    max_build_duration: 60
+    environment:
+      flutter: stable
+    scripts:
+      - name: Get packages
+        script: flutter pub get
+      - name: Create platform folders (if missing)
+        script: flutter create .
+      - name: Build release APK (local mode)
+        script: flutter build apk --release --dart-define=LOCAL_MODE=true
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk

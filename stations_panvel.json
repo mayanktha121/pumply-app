@@ -1,0 +1,58 @@
+[
+  {
+    "id": "pnv1",
+    "name": "IndianOil \u2014 Old Panvel",
+    "brand": "IOCL",
+    "area": "Old Panvel",
+    "lat": 18.988,
+    "lng": 73.116,
+    "fuels": {
+      "PETROL": "AVAILABLE",
+      "DIESEL": "AVAILABLE",
+      "CNG": "UNAVAILABLE",
+      "EV": "LOW"
+    }
+  },
+  {
+    "id": "pnv2",
+    "name": "BPCL \u2014 New Panvel Sec 5",
+    "brand": "BPCL",
+    "area": "New Panvel",
+    "lat": 19.007,
+    "lng": 73.103,
+    "fuels": {
+      "PETROL": "LOW",
+      "DIESEL": "AVAILABLE",
+      "CNG": "AVAILABLE",
+      "EV": "UNAVAILABLE"
+    }
+  },
+  {
+    "id": "pnv3",
+    "name": "HPCL \u2014 Panvel Matheran Rd",
+    "brand": "HPCL",
+    "area": "Panvel",
+    "lat": 18.993,
+    "lng": 73.127,
+    "fuels": {
+      "PETROL": "AVAILABLE",
+      "DIESEL": "LOW",
+      "CNG": "UNAVAILABLE",
+      "EV": "UNAVAILABLE"
+    }
+  },
+  {
+    "id": "pnv4",
+    "name": "Nayara \u2014 Palaspe Phata",
+    "brand": "Nayara",
+    "area": "Palaspe",
+    "lat": 18.996,
+    "lng": 73.116,
+    "fuels": {
+      "PETROL": "AVAILABLE",
+      "DIESEL": "AVAILABLE",
+      "CNG": "LOW",
+      "EV": "UNAVAILABLE"
+    }
+  }
+]
