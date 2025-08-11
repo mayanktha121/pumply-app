@@ -1,15 +1,38 @@
 workflows:
-  android-apk-local:
-    name: Android APK (Local Mode, auto-create android/ios)
-    max_build_duration: 60
+  android-apk:
+    name: Android APK (Flutter)
+    environment:
+      flutter: stable
+      vars:
+        PACKAGE_NAME: "com.pumply.app"
+    scripts:
+      - |
+        echo "Ensuring Flutter project structure..."
+        if [ ! -d "android" ] || [ ! -d "ios" ]; then
+          flutter create .
+        fi
+        flutter pub get
+        flutter build apk --release
+    artifacts:
+      - build/app/outputs/flutter-apk/*.apk
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
+        - .pub-cache
+        - build
+  web-release:
+    name: Web Release (Flutter)
     environment:
       flutter: stable
     scripts:
-      - name: Get packages
-        script: flutter pub get
-      - name: Create platform folders (if missing)
-        script: flutter create .
-      - name: Build release APK (local mode)
-        script: flutter build apk --release --dart-define=LOCAL_MODE=true
+      - |
+        if [ ! -f "pubspec.yaml" ]; then
+          echo "pubspec.yaml missing"; exit 1;
+        fi
+        if [ ! -d "web" ]; then
+          flutter create .
+        fi
+        flutter pub get
+        flutter build web --release
     artifacts:
-      - build/app/outputs/flutter-apk/app-release.apk
+      - build/web/**

@@ -1,7 +1,17 @@
-How to use (GitHub upload):
-1) Open this 'pumply-app' folder on your PC.
-2) Select EVERYTHING inside (Ctrl + A) and drag-drop to GitHub upload page.
-3) Commit changes.
-4) On Codemagic, add your repo -> it will pick codemagic.yaml.
-5) Run workflow 'Android APK (Local Mode, auto-create android/ios)'.
-6) Download app-release.apk from Artifacts and install on phone.
+# Pumply App (Starter)
+
+This repository contains a **minimal Flutter starter** for Pumply.  
+You can upload these files to GitHub and connect Codemagic to build the APK.
+
+## Quick steps
+
+1. Upload all files/folders at the **root** of your repo (same level as `pubspec.yaml`).
+2. Codemagic will run `flutter create .` during the build if platform folders are missing.
+3. To run locally:
+   ```bash
+   flutter pub get
+   flutter run
+   ```
+4. Add your UI in `lib/` and assets in `assets/images/`.
+
+> Note: Do **not** upload `build/` or `.dart_tool/` to GitHub.
